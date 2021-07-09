@@ -19,13 +19,14 @@
     <div class="containter">
         <div class="navigation">
             <ul>
-                <li><a href="#banner">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#service">Services</a></li>
-                <li><a href="#project">Project</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#banner" onclick="toggleMenu();">Home</a></li>
+                <li><a href="#about" onclick="toggleMenu();">About</a></li>
+                <li><a href="#service" onclick="toggleMenu();">Services</a></li>
+                <li><a href="#project" onclick="toggleMenu();">Project</a></li>
+                <li><a href="#testimonials" onclick="toggleMenu();">Testimonials</a></li>
+                <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
             </ul>
+            <div class="themeSwitch"></div>
         </div>
         <div class="main">
             <div class="topbar">
@@ -201,7 +202,7 @@
                         </div>
                     </div>
                 </div>
-            </section>>
+            </section>
             <!-- testmonial -->
             <section class="testimonials adjust" id="testimonials">
                 <div class="title">
@@ -214,6 +215,9 @@
                             <img src="image/ibrahim-tesmonial.jpg" alt="">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed deleniti perspiciatis
                                 illum, at nihil dicta, quibusdam illo non iste dolor incidunt quasi enim voluptas
+                                veritatis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed deleniti
+                                perspiciatis
+                                illum, at nihil dicta, quibusdam illo non iste dolor incidunt quasi enim voluptas
                                 veritatis.</p>
                             <h4>Someone Famouse <br> <span>Website Designer</span> </h4>
                         </div>
@@ -222,6 +226,9 @@
                         <div class="imgBx">
                             <img src="image/user1.jpg" alt="">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed deleniti perspiciatis
+                                illum, at nihil dicta, quibusdam illo non iste dolor incidunt quasi enim voluptas
+                                veritatis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed deleniti
+                                perspiciatis
                                 illum, at nihil dicta, quibusdam illo non iste dolor incidunt quasi enim voluptas
                                 veritatis.</p>
                             <h4>Someone Famouse <br> <span>Website Designer</span> </h4>
@@ -232,6 +239,9 @@
                             <img src="image/user2.jpg" alt="">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed deleniti perspiciatis
                                 illum, at nihil dicta, quibusdam illo non iste dolor incidunt quasi enim voluptas
+                                veritatis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed deleniti
+                                perspiciatis
+                                illum, at nihil dicta, quibusdam illo non iste dolor incidunt quasi enim voluptas
                                 veritatis.</p>
                             <h4>Someone Famouse <br> <span>Website Designer</span> </h4>
                         </div>
@@ -241,12 +251,42 @@
                             <img src="image/user3.jpg" alt="">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed deleniti perspiciatis
                                 illum, at nihil dicta, quibusdam illo non iste dolor incidunt quasi enim voluptas
+                                veritatis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed deleniti
+                                perspiciatis
+                                illum, at nihil dicta, quibusdam illo non iste dolor incidunt quasi enim voluptas
                                 veritatis.</p>
                             <h4>Someone Famouse <br> <span>Website Designer</span> </h4>
                         </div>
                     </div>
                 </div>
             </section>
+            <!-- Contact -->
+            <section class="contact adjust" id="contact">
+                <div class="title">
+                    <h2>Let's Say Hi</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="contactForm">
+                    <div class="row">
+                        <input type="text" name="" placeholder="First Name">
+                        <input type="text" name="" placeholder="Last Name">
+                    </div>
+                    <div class="row">
+                        <input type="text" name="" placeholder="Email Address">
+                        <input type="text" name="" placeholder="Mobile No.">
+                    </div>
+                    <div class="row2">
+                        <textarea placeholder="Message"></textarea>
+                    </div>
+                    <div class="row2">
+                        <input type="submit" value="Send">
+                    </div>
+                </div>
+            </section>
+            <!-- copyright Text-->
+            <div class="copyright">
+                <p>Copyright &copy 2021 Ibrahim. All Right Reserved</p>
+            </div>
         </div>
     </div>
     <script>
@@ -254,11 +294,26 @@
         let topbar = document.querySelector('.topbar');
         let navigation = document.querySelector('.navigation');
         let main = document.querySelector('.main');
+        let themeSwitch = document.querySelector('.themeSwitch');
+        let body = document.querySelector('body')
         toggle.onclick = function () {
             toggle.classList.toggle('active');
             topbar.classList.toggle('active');
             navigation.classList.toggle('active');
             main.classList.toggle('active');
+        }
+
+        //theme switch toggle
+        themeSwitch.onclick = function () {
+            body.classList.toggle('dark')
+        }
+
+        // now, we fix menu active class issue for mobile devices
+        function toggleMenu() {
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+            navigation.classList.remove('active');
+            main.classList.remove('active');
         }
     </script>
 </body>
